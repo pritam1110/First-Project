@@ -36,7 +36,7 @@ public class Testing extends BaseClass {
 		BaseClass.ScreenShot("0113.jpg");
 		
 		//Scroll down
-		WebElement scrl=driver.findElement(By.xpath("//a[@title='Go to Product: SANTA CRUZ x Spongebob Jellyfishing Mens T-Shirt']"));
+		WebElement scrl=driver.findElement(By.xpath("//a[@title='Go to Product: SANTA CRUZ x Spongebob Group Boys T-Shirt']"));
 		scrollDown(scrl);
 		
 		//Button click
@@ -128,13 +128,41 @@ public class Testing extends BaseClass {
 		WebElement miniCart=driver.findElement(By.xpath("//span[@class='minicart-quantity']"));
 		btnClick(miniCart);
 		
+		Thread.sleep(4000);
+		
+		//Click
+		WebElement btnPopCl=driver.findElement(By.xpath("//button[@id='popupPassBtn']"));
+		btnClick(btnPopCl);
+		
+		Thread.sleep(3000);
+		
+		//Click
+		WebElement btnCheckOut=driver.findElement(By.xpath("(//button[@value='Checkout'])[2]"));
+		btnClick(btnCheckOut);
+		
+		//screenshot
+		BaseClass.ScreenShot("01110.jpg");
+		
+		//Scroll Down
+		WebElement scrlBilling=driver.findElement(By.xpath("(//button[@value='Continue to Billing'])[1]"));
+		scrollDown(scrlBilling);
+		
+		Thread.sleep(3000);
+		
+		//Click
+		WebElement btnBilling=driver.findElement(By.xpath("(//button[@value='Continue to Billing'])[1]"));
+		btnClick(btnBilling);
+		
+		//screenshot
+		BaseClass.ScreenShot("01111.jpg");
+		
 		//Excel write
 		WebElement proName=driver.findElement(By.xpath("//a[@class='product-name-link']"));
 		String text = proName.getText();
 		writeExcel(1,0,text);
 		
 		//screenshot
-		BaseClass.ScreenShot("01110.jpg");
+		BaseClass.ScreenShot("01112.jpg");
 		
 		
 	}
